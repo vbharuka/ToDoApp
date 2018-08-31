@@ -1,0 +1,8 @@
+TableViewController
+No delegates, no data source
+table view Cell accessory -  checkmark
+
+Navigation controller
+Top bar controller
+Setting background of navigation controller for all navigations and changing text color
+
