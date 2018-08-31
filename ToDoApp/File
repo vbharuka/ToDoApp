@@ -6,3 +6,12 @@ Navigation controller
 Top bar controller
 Setting background of navigation controller for all navigations and changing text color
 
+Added Bar button and set the system item to add
+In the click action, alert pops up to add new item
+Alert Creation :-
+Create UIAlertController
+Create AlertAction and add to the alert(write blocks when add is pressed)
+Add textfiled to the alert
+Present alert
+
+
