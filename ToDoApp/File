@@ -1,21 +1,4 @@
-TableViewController
-No delegates, no data source
-table view Cell accessory -  checkmark
-
-Navigation controller
-Top bar controller
-Setting background of navigation controller for all navigations and changing text color
-
-Added Bar button and set the system item to add
-In the click action, alert pops up to add new item
-Alert Creation :-
-Create UIAlertController
-Create AlertAction and add to the alert(write blocks when add is pressed)
-Add textfiled to the alert
-Present alert
-
-
-All data is defaults are loaded simultaneously before it can be used so it is better to not use it as data base
-The data is defaults are stored in plist
-We generally use UserDefaults.standard object to access user defaults
-
+There was a problem with the previous version as the cell are reusable and checkmark attribute is releted to cell so it checks when it is reused
+To solve the above problem we converted the approach to mvc architecture
+However to store the data using user defaults, we needed consistent data type so we switched to custom plist mode of storing the data to store it in format of our model class Item type
+This module covers the creation of custom plist and use of encodable and decodable classes to store the data in plist
