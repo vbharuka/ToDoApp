@@ -10,14 +10,22 @@ import UIKit
 
 class ToDoListViewController: UITableViewController {
 
+    // MARK: UserDefault object created
+    let defaults = UserDefaults.standard
+    
+    var itemArray = ["Shopping", "Studying", "Calling"]
+
     @IBAction func addItemBtnPressed(_ sender: Any) {
         
         var textField = UITextField()
+        
         
         let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             self.itemArray.append(textField.text!)
+            // MARK: Saving the data into defaults
+            self.defaults.set(self.itemArray, forKey: "ToDoArray")
             self.tableView.reloadData()
         }
         
@@ -30,9 +38,13 @@ class ToDoListViewController: UITableViewController {
         
         present(alert, animated: true, completion: nil)
     }
-    var itemArray = ["Shopping", "Studying", "Calling"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        // MARK: Retrieving the data from user defaults
+        if let saveArray = defaults.array(forKey: "ToDoArray") {
+            itemArray = saveArray as! [String]
+        }
     }
     
     // MARK: Table View delegate methods

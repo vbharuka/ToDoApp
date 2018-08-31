@@ -15,3 +15,7 @@ Add textfiled to the alert
 Present alert
 
 
+All data is defaults are loaded simultaneously before it can be used so it is better to not use it as data base
+The data is defaults are stored in plist
+We generally use UserDefaults.standard object to access user defaults
+
