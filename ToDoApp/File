@@ -1,4 +1,27 @@
-There was a problem with the previous version as the cell are reusable and checkmark attribute is releted to cell so it checks when it is reused
-To solve the above problem we converted the approach to mvc architecture
-However to store the data using user defaults, we needed consistent data type so we switched to custom plist mode of storing the data to store it in format of our model class Item type
-This module covers the creation of custom plist and use of encodable and decodable classes to store the data in plist
+The last version of the app used custom plist which is capable of storing objects of custom data types however to store a large number of data, plist are inefficient as they load whole data before allowing to use and can be computationally expensive.
+This version of the app will use core data which uses sqllite under the hood as database
+Few analogies to understand core data better:
+Database = Persistent container
+Table = Entity
+Columns = Attributes
+Rows = NSManagedObject
+
+Application cant directly connect with persistent container so we use a mediator called context which is like a scratchpad where we can create, read, update, delete(CRUD) objects and then finally commit to persistent container
+
+Working With CoreData:
+Create a core data model(xcdatamodelId file)
+Add persistentContainer and saveContext methods to app delegate and add model name to it
+Write CRUD operations accordingly
+Remeber to save context after every operation
+
+In this version, we have also added search button and applied some delegate functions
+
+A new tableViewController for category was added
+Category entity and Item entity were made to relate each other(Relationship between two entities in coredata)
+
+There are some additional parameters for fetch request from the core data
+We can query coreData using predicate, add more than one predicate using conpound predicate and sort the results using sortDescriptors
+
+
+There was lots of new technlogy involved in this. Good to go...
+
